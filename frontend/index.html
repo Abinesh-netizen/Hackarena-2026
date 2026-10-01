@@ -1,24 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ta">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hackathon Starter</title>
+
+    <title>பெண்கள் உதவி | WomenSahay</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Hackathon Starter 🚀</h1>
-        <p>Frontend is ready.</p>
+    <div class="app">
 
-        <button onclick="checkBackend()">
-            Check Backend
-        </button>
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">🌸 பெண்கள் உதவி</div>
+            <div class="subtitle">WomenSahay</div>
+        </header>
 
-        <p id="result"></p>
+
+        <main>
+
+            <!-- Welcome -->
+            <section class="welcome">
+                <h1>வணக்கம்! 👋</h1>
+
+                <p>
+                    அரசு திட்டங்கள் மற்றும் சேவைகளை<br>
+                    எளிதாக தெரிந்து கொள்ளுங்கள்.
+                </p>
+
+                <div class="language-box">
+                    🇮🇳 தமிழ் மொழியில் எளிய உதவி
+                </div>
+            </section>
+
+
+            <!-- Chat -->
+            <section class="chat-box" id="chatBox">
+
+                <div class="bot-message">
+                    வணக்கம்! 😊<br><br>
+
+                    உங்களுக்கு என்ன உதவி வேண்டும்?<br>
+
+                    உதாரணமாக:<br>
+                    <b>“எனக்கு கேஸ் இணைப்பு வேண்டும்”</b>
+                </div>
+
+            </section>
+
+
+            <!-- Input -->
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="உங்கள் கேள்வியை இங்கே எழுதுங்கள்..."
+                    onkeydown="if(event.key === 'Enter') sendMessage()"
+                >
+
+                <button onclick="sendMessage()">
+                    ➤
+                </button>
+
+            </div>
+
+
+            <!-- Voice -->
+            <button class="voice-btn" onclick="startVoice()">
+                🎙️ பேசி கேளுங்கள்
+            </button>
+
+
+            <!-- Quick Actions -->
+            <section class="quick-actions">
+
+                <button onclick="askQuestion('எனக்கு கேஸ் இணைப்பு வேண்டும்')">
+                    🔥 கேஸ் இணைப்பு
+                </button>
+
+                <button onclick="askQuestion('இந்த திட்டத்திற்கு தேவையான ஆவணங்கள் என்ன?')">
+                    📄 தேவையான ஆவணங்கள்
+                </button>
+
+                <button onclick="askQuestion('நான் எப்படி விண்ணப்பிப்பது?')">
+                    📝 விண்ணப்பிப்பது எப்படி?
+                </button>
+
+            </section>
+
+
+            <!-- Official Website -->
+            <section class="official-card">
+
+                <h2>🏛️ அதிகாரப்பூர்வ அரசு சேவை</h2>
+
+                <p>
+                    உஜ்வாலா திட்டத்தைப் பற்றி மேலும் தெரிந்து கொள்ள
+                    அதிகாரப்பூர்வ அரசு இணையதளத்தைப் பயன்படுத்துங்கள்.
+                </p>
+
+                <a
+                    href="https://www.pmuy.gov.in/"
+                    target="_blank"
+                    class="official-btn"
+                >
+                    🌐 அதிகாரப்பூர்வ இணையதளத்தைத் திறக்கவும்
+                </a>
+
+            </section>
+
+
+            <!-- Loading -->
+            <div id="loading" class="loading">
+                பதில் தயாராகிறது... ⏳
+            </div>
+
+        </main>
+
+
+        <!-- Footer -->
+        <footer>
+            தகவல் வழிகாட்டி • அதிகாரப்பூர்வ அரசு சேவைகளை அணுக உதவும்
+        </footer>
+
     </div>
 
+
     <script src="script.js"></script>
+
 </body>
 </html>
