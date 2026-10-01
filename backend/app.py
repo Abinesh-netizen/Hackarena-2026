@@ -16,7 +16,8 @@ client = genai.Client(
 
 @app.route("/")
 def home():
-    return send_from_directory("../frontend", "index.html")
+    return send_from_directory(os.path.join(os.path.dirname(__file__), "../frontend"), "index.html")
+
 
 
 @app.route("/api/chat", methods=["POST"])
@@ -85,4 +86,3 @@ https://www.pmuy.gov.in/
 
 if __name__ == "__main__":
     app.run(debug=True)
-    
